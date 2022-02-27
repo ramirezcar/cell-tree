@@ -1,9 +1,9 @@
 
 <table>
     <tbody>
-      <tr *ngFor='let level of levels'>
-        <th>Nivel {{level+1}}</th>
-          <td *ngFor="let cell of getCellsByLevel(level)">
+      <tr *ngFor='let parent_cell of parent_cells'>
+        <th>{{parent_cell}}</th>
+          <td *ngFor="let cell of getChilden(parent_cell)">
             {{cell.Name}}
           </td>
       </tr>

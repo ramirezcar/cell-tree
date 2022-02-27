@@ -10,25 +10,16 @@ import { CellService } from '../services/cell.service';
 export class TreeComponent implements OnInit {
   title = 'client'
   public cells: Array<any> = []
-  public levels:Array<any> = []
+  public parent_cells:Array<any> = []
   public normalized_levels:Array<any> = []
   
   constructor(private CellService: CellService) {
     this.CellService.getCells().subscribe((resp:any) => {
       this.cells = resp.data
       // Extraer Niveles
-      this.levels = [...new Set(this.cells.map(e => parseInt(e.Parent)))];
-      // Array de niveles unicos con sus respectivas celulas
-      this.levels.forEach(level => {
-        let level_arr:Array<any> = []
-        level_arr[level] = this.cells.filter(function (e) {
-          if(e.Parent == level.key) 
-            return e
-        })
-        // this.normalized_levels.push(level)
-      })
+      this.parent_cells = [...new Set(this.cells.map(e => parseInt(e.Parent)))];
       // Ordenar Array por Niveles de forma ascendente
-      this.levels.sort((a:any, b:any) => {
+      this.parent_cells.sort((a:any, b:any) => {
         return a - b
       })
       
@@ -36,9 +27,9 @@ export class TreeComponent implements OnInit {
     })
   }
   
-  getCellsByLevel(level:any) {
+  getChilden(parent_level:any) {
     let filtered = this.cells.filter(function(cell){
-      return cell.Parent == level;
+      return cell.Parent == parent_level;
     });
     return filtered
   }
