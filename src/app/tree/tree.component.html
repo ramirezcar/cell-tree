@@ -1,0 +1,13 @@
+
+<table>
+    <tbody>
+      <tr *ngFor='let level of levels'>
+        <th>Nivel {{level+1}}</th>
+          <td *ngFor="let cell of getCellsByLevel(level)">
+            {{cell.Name}}
+          </td>
+      </tr>
+    </tbody>
+</table>
+
+<img src="https://i.pinimg.com/originals/58/1a/de/581adeaad10a6026999a6b9dd7b739e7.gif" alt="">
