@@ -1,4 +1,51 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { 
+  margin: 0; 
+  font-family: Roboto, "Helvetica Neue", sans-serif; 
+  line-height: 1.3 !important;
+}
+
+$line_color: rgb(184, 184, 184);
+$separation: 1.5em;
+
+ul {
+  padding: 0;
+  margin-left: 1em;
+  list-style-type: none;
+  position: relative;
+}
+
+li {
+  list-style-type: none;
+  &[class]{
+    border-left: 1px solid $line_color;
+  }
+}
+
+li:empty{
+  margin-left: 2em;
+}
+
+li span {
+  font-weight: bold;
+  padding-left: $separation;
+  position: relative;
+}
+
+li span::before {
+  content:'';
+  position: absolute;
+  top: 0;
+  left: -1px;
+  bottom: 50%;
+  width: 1.2em;
+  border: 1px solid $line_color;
+  border-top: 0 none transparent;
+  border-right: 0 none transparent;
+}
+
+ul > li:last-child {
+  border-left: 1px solid transparent;
+}
