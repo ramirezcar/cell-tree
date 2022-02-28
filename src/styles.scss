@@ -21,16 +21,14 @@ li {
   list-style-type: none;
   &[class]{
     border-left: 1px solid $line_color;
+    // margin-left: 2em;
+    
   }
-}
-
-li:empty{
-  margin-left: 2em;
 }
 
 li span {
   font-weight: bold;
-  padding-left: $separation;
+  padding-left: .6em;
   position: relative;
 }
 
@@ -40,7 +38,7 @@ li span::before {
   top: 0;
   left: -1px;
   bottom: 50%;
-  width: 1.2em;
+  width: .5em;
   border: 1px solid $line_color;
   border-top: 0 none transparent;
   border-right: 0 none transparent;
