@@ -4,4 +4,4 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Información
 
-Se representa el arbol de calsificación de organismos en forma de listado
+Se representa el arbol de clasificación de organismos en forma de listado
